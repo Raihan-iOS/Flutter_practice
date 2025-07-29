@@ -1,4 +1,4 @@
-# Flutter Practise
+# Flutter Practice
 
 A new Flutter project.
 
