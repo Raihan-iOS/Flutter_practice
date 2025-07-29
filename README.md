@@ -1,4 +1,4 @@
-# widget_app_structure
+# Flutter Practise
 
 A new Flutter project.
 
