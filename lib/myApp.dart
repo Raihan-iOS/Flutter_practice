@@ -16,6 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue, // ✅ This sets your AppBar color
+          foregroundColor: Colors.white, // Text/icon color
+        ),
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.white70,
+          indicatorColor: Colors.white,
+        ),
       ),
       home: Module9class2Drawer(),
     );
