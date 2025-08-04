@@ -5,6 +5,8 @@ import 'package:widget_app_structure/module8/module8class2.dart';
 import 'package:widget_app_structure/module8/stackpractice.dart';
 import 'package:widget_app_structure/module_9/alert.dart';
 import 'package:widget_app_structure/module_9/module9_class2_drawer.dart';
+import 'package:widget_app_structure/module_9/own_widget.dart';
+import 'package:widget_app_structure/module_9/own_widget_implement.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
           indicatorColor: Colors.white,
         ),
       ),
-      home: Module9class2Drawer(),
+      home: OwnWidgetImplement(),
     );
   }
 }
