@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widget_app_structure/module8/module8class1.dart';
 import 'package:widget_app_structure/module8/module8class2.dart';
-import 'package:widget_app_structure/module_9/alert.dart';
+import 'package:widget_app_structure/module_9/class_1_alert.dart';
 
 class Module9class2Drawer extends StatefulWidget {
   const Module9class2Drawer({super.key});

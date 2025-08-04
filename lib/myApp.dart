@@ -3,10 +3,10 @@ import 'package:widget_app_structure/module8/module8Class3.dart';
 import 'package:widget_app_structure/module8/module8class1.dart';
 import 'package:widget_app_structure/module8/module8class2.dart';
 import 'package:widget_app_structure/module8/stackpractice.dart';
-import 'package:widget_app_structure/module_9/alert.dart';
+import 'package:widget_app_structure/module_9/class_1_alert.dart';
 import 'package:widget_app_structure/module_9/module9_class2_drawer.dart';
-import 'package:widget_app_structure/module_9/own_widget.dart';
-import 'package:widget_app_structure/module_9/own_widget_implement.dart';
+import 'package:widget_app_structure/module_9/own_widget/own_widget.dart';
+import 'package:widget_app_structure/module_9/own_widget/own_widget_implement.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

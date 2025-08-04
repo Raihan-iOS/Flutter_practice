@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widget_app_structure/module_9/own_widget.dart';
+import 'package:widget_app_structure/module_9/own_widget/own_widget.dart';
 
 class OwnWidgetImplement extends StatelessWidget {
   const OwnWidgetImplement({super.key});
