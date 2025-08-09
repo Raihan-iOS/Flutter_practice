@@ -13,7 +13,7 @@ class Watertank extends StatefulWidget {
 
 class _WatertankState extends State<Watertank> {
   final int tankCapacity = 3000;
-  int _currentVolume = 1500;
+  int _currentVolume = 200;
 
   double convertVolumeAndNormalized(int value, {bool toNormalized = true}) {
     if (toNormalized) {
