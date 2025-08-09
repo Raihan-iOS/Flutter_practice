@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:widget_app_structure/ProjectHome.dart';
 import 'package:widget_app_structure/home.dart';
-import 'package:widget_app_structure/module11/mycalculator.dart';
+import 'package:widget_app_structure/module11/Calculator/mycalculator.dart';
+import 'package:widget_app_structure/module11/MyWaterTank/watertank.dart';
 import 'package:widget_app_structure/module8/module8Class3.dart';
 import 'package:widget_app_structure/module8/module8class1.dart';
 import 'package:widget_app_structure/module8/module8class2.dart';
@@ -27,11 +29,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => MyCalculator(), //HomePage(),
+        '/': (context) => ProjectHome(), //HomePage(),
         '/page1': (context) => FirstPage(),
         '/page2': (context) => SecondPage(),
         '/page3': (context) => ThirdPage(),
         '/page4': (context) => FourthPage(),
+        '/page5': (context) => MyCalculator(),
+        '/page6': (context) => Watertank(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
