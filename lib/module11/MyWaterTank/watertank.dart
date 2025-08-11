@@ -200,7 +200,7 @@ class _WatertankState extends State<Watertank> {
                       waterAmount: 100,
                       waterIcon: Icons.water_drop,
                       onPressed: () {
-                        updateWaterLevel(500);
+                        updateWaterLevel(100);
                       },
                     ),
                     waterAddButton(
