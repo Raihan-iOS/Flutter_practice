@@ -64,6 +64,30 @@ class ProjectHome extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              SizedBox(
+                width: 300,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrange,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.all(16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/page7',
+                    ); // Navigate to My Water Tank
+                  },
+                  child: Text(
+                    'Project 2 : Money Management',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ),
               // Add more buttons or widgets as needed
             ],
           ),

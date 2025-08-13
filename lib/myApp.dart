@@ -3,6 +3,7 @@ import 'package:widget_app_structure/ProjectHome.dart';
 import 'package:widget_app_structure/home.dart';
 import 'package:widget_app_structure/module11/Calculator/mycalculator.dart';
 import 'package:widget_app_structure/module11/MyWaterTank/watertank.dart';
+import 'package:widget_app_structure/module12/money_management.dart';
 import 'package:widget_app_structure/module8/module8Class3.dart';
 import 'package:widget_app_structure/module8/module8class1.dart';
 import 'package:widget_app_structure/module8/module8class2.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/page4': (context) => FourthPage(),
         '/page5': (context) => MyCalculator(),
         '/page6': (context) => Watertank(),
+        '/page7': (context) => MoneyManagement(),
       },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
