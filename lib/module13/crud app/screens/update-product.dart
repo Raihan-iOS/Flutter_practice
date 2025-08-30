@@ -16,6 +16,7 @@ class _UpdateProductState extends State<UpdateProduct> {
       TextEditingController();
   final TextEditingController _unitPriceController = TextEditingController();
   final TextEditingController _imageUrlController = TextEditingController();
+  bool _updateProductInProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +37,15 @@ class _UpdateProductState extends State<UpdateProduct> {
             unitPriceController: _unitPriceController,
             imageUrlController: _imageUrlController,
             formType: 'Update',
+            onAddProductSubmit: _updateProduct,
+            addProductInProgress: _updateProductInProgress,
           ),
         ),
       ),
     );
   }
+
+  void _updateProduct() {}
 
   @override
   void dispose() {

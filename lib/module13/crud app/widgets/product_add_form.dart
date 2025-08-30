@@ -9,6 +9,8 @@ class product_add_entry_form extends StatelessWidget {
     required TextEditingController productQuantityController,
     required TextEditingController unitPriceController,
     required TextEditingController imageUrlController,
+    required this.onAddProductSubmit,
+    required this.addProductInProgress,
   }) : _productNameController = productNameController,
        _productCodeController = productCodeController,
        _productQuantityController = productQuantityController,
@@ -22,12 +24,15 @@ class product_add_entry_form extends StatelessWidget {
   final TextEditingController _unitPriceController;
   final TextEditingController _imageUrlController;
   final String _formType;
+  final VoidCallback onAddProductSubmit;
+  final bool addProductInProgress;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
+          SizedBox(height: 10),
           TextFormField(
             textInputAction: TextInputAction.next,
             controller: _productNameController,
@@ -38,6 +43,12 @@ class product_add_entry_form extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            validator: (String? value) {
+              if (value?.trim().isEmpty == true) {
+                return 'Please enter product name';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 10),
           TextFormField(
@@ -51,6 +62,12 @@ class product_add_entry_form extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            validator: (String? value) {
+              if (value?.trim().isEmpty == true) {
+                return 'Please enter product code';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 10),
           TextFormField(
@@ -64,6 +81,12 @@ class product_add_entry_form extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            validator: (String? value) {
+              if (value?.trim().isEmpty == true) {
+                return 'Please enter product quantity';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 10),
           TextFormField(
@@ -77,6 +100,12 @@ class product_add_entry_form extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            validator: (String? value) {
+              if (value?.trim().isEmpty == true) {
+                return 'Please enter unit price';
+              }
+              return null;
+            },
           ),
 
           SizedBox(height: 10),
@@ -90,9 +119,26 @@ class product_add_entry_form extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+            validator: (String? value) {
+              if (value?.trim().isEmpty == true) {
+                return 'Please enter image url';
+              }
+              return null;
+            },
           ),
           SizedBox(height: 20),
-          FilledButton(onPressed: () {}, child: Text('$_formType Product')),
+          Visibility(
+            visible: addProductInProgress == false,
+            replacement: Center(child: CircularProgressIndicator()),
+            child: FilledButton(
+              onPressed: () {
+                if (_formType == 'Add') {
+                  onAddProductSubmit();
+                } else {}
+              },
+              child: Text('$_formType Product'),
+            ),
+          ),
         ],
       ),
     );
