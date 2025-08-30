@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:widget_app_structure/peoject_cell_widget.dart';
 
 class ProjectHome extends StatelessWidget {
   const ProjectHome({super.key});
@@ -17,76 +19,34 @@ class ProjectHome extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
 
             children: [
-              SizedBox(
-                width: 300,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/page5',
-                    ); // Navigate to MyCalculator
-                  },
-                  child: Text(
-                    'Project 1 : Calculator',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
+              peoject_cell_widget(
+                serial: 1,
+                routeName: '/page5',
+                title: 'Calculator',
               ),
               SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/page6',
-                    ); // Navigate to My Water Tank
-                  },
-                  child: Text(
-                    'Project 2 : My Water Tank',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
+              peoject_cell_widget(
+                serial: 2,
+                routeName: '/page6',
+                title: 'My Water Tank',
               ),
               SizedBox(height: 20),
-              SizedBox(
-                width: 300,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepOrange,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(16.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/page7',
-                    ); // Navigate to My Water Tank
-                  },
-                  child: Text(
-                    'Project 2 : Money Management',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
+              peoject_cell_widget(
+                serial: 3,
+                routeName: '/page7',
+                title: 'Money Management',
+              ),
+              SizedBox(height: 20),
+              peoject_cell_widget(
+                serial: 4,
+                routeName: '/page8',
+                title: 'To-Do App',
+              ),
+              SizedBox(height: 20),
+              peoject_cell_widget(
+                serial: 5,
+                routeName: '/page9',
+                title: 'CRUD App',
               ),
               // Add more buttons or widgets as needed
             ],
