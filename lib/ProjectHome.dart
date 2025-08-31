@@ -15,41 +15,43 @@ class ProjectHome extends StatelessWidget {
       ),
       body: Center(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
 
-            children: [
-              peoject_cell_widget(
-                serial: 1,
-                routeName: '/page5',
-                title: 'Calculator',
-              ),
-              SizedBox(height: 20),
-              peoject_cell_widget(
-                serial: 2,
-                routeName: '/page6',
-                title: 'My Water Tank',
-              ),
-              SizedBox(height: 20),
-              peoject_cell_widget(
-                serial: 3,
-                routeName: '/page7',
-                title: 'Money Management',
-              ),
-              SizedBox(height: 20),
-              peoject_cell_widget(
-                serial: 4,
-                routeName: '/page8',
-                title: 'To-Do App',
-              ),
-              SizedBox(height: 20),
-              peoject_cell_widget(
-                serial: 5,
-                routeName: '/page9',
-                title: 'CRUD App',
-              ),
-              // Add more buttons or widgets as needed
-            ],
+              children: [
+                peoject_cell_widget(
+                  serial: 1,
+                  routeName: '/page5',
+                  title: 'Calculator',
+                ),
+                SizedBox(height: 20),
+                peoject_cell_widget(
+                  serial: 2,
+                  routeName: '/page6',
+                  title: 'My Water Tank',
+                ),
+                SizedBox(height: 20),
+                peoject_cell_widget(
+                  serial: 3,
+                  routeName: '/page7',
+                  title: 'Money Management',
+                ),
+                SizedBox(height: 20),
+                peoject_cell_widget(
+                  serial: 4,
+                  routeName: '/page8',
+                  title: 'To-Do App',
+                ),
+                SizedBox(height: 20),
+                peoject_cell_widget(
+                  serial: 5,
+                  routeName: '/page9',
+                  title: 'CRUD App',
+                ),
+                // Add more buttons or widgets as needed
+              ],
+            ),
           ),
         ),
       ),

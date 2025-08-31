@@ -1,9 +1,19 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:widget_app_structure/module13/crud%20app/screens/update-product.dart';
 import 'package:widget_app_structure/module13/models/product_model.dart';
 
 class Product_list extends StatelessWidget {
-  Product_list({super.key, required this.products});
+  Product_list({
+    super.key,
+    required this.products,
+    required this.productDelete,
+    required this.deleteInProgress,
+  });
+
+  final void Function(String id) productDelete;
+  bool deleteInProgress = false;
 
   List<ProductModel> products = [];
 
@@ -35,35 +45,43 @@ class Product_list extends StatelessWidget {
               ),
             ],
           ),
-          trailing: PopupMenuButton(
-            itemBuilder:
-                (context) => [
-                  PopupMenuItem(
-                    value: productoptions.update,
-                    child: Text('Update'),
-                    // onTap: () {
-                    //   print(productoptions.values);
-                    // },
-                  ),
-                  PopupMenuItem(
-                    value: productoptions.delete,
-                    child: Text('Delete'),
-                    // onTap: () {
-                    //   print(productoptions.values);
-                    // },
-                  ),
-                ],
-            onSelected: (productoptions selectedOptions) {
-              print(selectedOptions.name);
-              if (selectedOptions == productoptions.update) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => UpdateProduct()),
-                );
-              } else {
-                print('delete');
-              }
-            },
+          trailing: Visibility(
+            visible: deleteInProgress == false,
+            replacement: SizedBox(
+              width: 20,
+              height: 20,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+            child: PopupMenuButton(
+              itemBuilder:
+                  (context) => [
+                    PopupMenuItem(
+                      value: productoptions.update,
+                      child: Text('Update'),
+                      // onTap: () {
+                      //   print(productoptions.values);
+                      // },
+                    ),
+                    PopupMenuItem(
+                      value: productoptions.delete,
+                      child: Text('Delete'),
+                      onTap: () => productDelete(product.id),
+                    ),
+                  ],
+              onSelected: (productoptions selectedOptions) {
+                print(selectedOptions.name);
+                if (selectedOptions == productoptions.update) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UpdateProduct(product: product),
+                    ),
+                  );
+                } else {
+                  print('delete');
+                }
+              },
+            ),
           ),
         );
       },

@@ -10,6 +10,7 @@ class product_add_entry_form extends StatelessWidget {
     required TextEditingController unitPriceController,
     required TextEditingController imageUrlController,
     required this.onAddProductSubmit,
+    required this.updateProductSubmit,
     required this.addProductInProgress,
   }) : _productNameController = productNameController,
        _productCodeController = productCodeController,
@@ -25,6 +26,7 @@ class product_add_entry_form extends StatelessWidget {
   final TextEditingController _imageUrlController;
   final String _formType;
   final VoidCallback onAddProductSubmit;
+  final VoidCallback updateProductSubmit;
   final bool addProductInProgress;
 
   @override
@@ -134,7 +136,9 @@ class product_add_entry_form extends StatelessWidget {
               onPressed: () {
                 if (_formType == 'Add') {
                   onAddProductSubmit();
-                } else {}
+                } else {
+                  updateProductSubmit();
+                }
               },
               child: Text('$_formType Product'),
             ),

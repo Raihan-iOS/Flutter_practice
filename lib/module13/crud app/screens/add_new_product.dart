@@ -3,6 +3,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
+import 'package:widget_app_structure/module13/crud%20app/Utils/Urls.dart';
 import 'package:widget_app_structure/module13/crud%20app/widgets/product_add_form.dart';
 import 'package:widget_app_structure/module13/crud%20app/widgets/snacksBarMessage.dart';
 
@@ -44,6 +45,7 @@ class _AddNewProductState extends State<AddNewProduct> {
             formType: 'Add',
             onAddProductSubmit: _addProduct,
             addProductInProgress: _productAddProgress,
+            updateProductSubmit: () {},
           ),
         ),
       ),
@@ -58,7 +60,7 @@ class _AddNewProductState extends State<AddNewProduct> {
     setState(() {
       _productAddProgress = true;
     });
-    Uri uri = Uri.parse('http://35.73.30.144:2008/api/v1/CreateProduct');
+    Uri uri = Uri.parse(Urls.createProduct);
     print(uri);
     int totalPrice = int.parse(_unitPriceController.text.trim());
     int.parse(_productQuantityController.text.trim());
@@ -84,16 +86,16 @@ class _AddNewProductState extends State<AddNewProduct> {
     setState(() {
       _productAddProgress = false;
     });
-
+    var resBody = json.decode(response.body);
     if (response.statusCode == 200 || response.statusCode == 201) {
-      var resBody = json.decode(response.body);
       print(resBody);
       _clearFields();
       FocusScope.of(context).unfocus();
       snacksBarMessage('Product added successfully', context);
+      Navigator.pop(context);
     } else {
       FocusScope.of(context).unfocus();
-      String errorMsg = reqBody['data'];
+      String errorMsg = resBody['data'];
       snacksBarMessage(errorMsg, context);
     }
   }
