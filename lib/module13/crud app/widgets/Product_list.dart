@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:widget_app_structure/module13/crud%20app/screens/update-product.dart';
+import 'package:widget_app_structure/module13/models/product_model.dart';
 
-class product_items extends StatelessWidget {
-  const product_items({super.key});
+class Product_list extends StatelessWidget {
+  Product_list({super.key, required this.products});
+
+  List<ProductModel> products = [];
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, index) {
+        final product = products[index];
         return ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.blue,
-            child: Text('${index + 1}'),
+          leading: Image.network(
+            width: 30,
+            height: 30,
+            product.img,
+            errorBuilder:
+                (context, error, stackTrace) =>
+                    const Icon(Icons.error, size: 30),
           ),
-          title: Text('Product ${index + 1}'),
+          title: Text(product.productName),
           subtitle: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(' Product code ${index + 1 + 1000}'),
+              Text(' Product code ${product.productCode}'),
               Row(
                 children: [
-                  Text('Quantity: ${(index + 1) * 2}'),
+                  Text('Quantity: ${(product.qty)}'),
                   SizedBox(width: 20),
-                  Text('Price: \$${(index + 1) * 10}'),
+                  Text('Price: \$${(product.unitPrice)}'),
                 ],
               ),
             ],
@@ -60,7 +68,7 @@ class product_items extends StatelessWidget {
         );
       },
       separatorBuilder: (context, index) => const Divider(indent: 70),
-      itemCount: 10,
+      itemCount: products.length,
     );
   }
 }
